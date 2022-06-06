@@ -1,5 +1,5 @@
 /*
-    Network Next SDK. Copyright © 2017 - 2021 Network Next, Inc.
+    Network Next SDK. Copyright © 2017 - 2022 Network Next, Inc.
 
 	Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following
 	conditions are met:
@@ -23,7 +23,18 @@
 #pragma once
 
 #include "NetworkNextSocket.h"
-#include "next.h"
+
+struct next_client_t;
+
+#ifndef NEXT_ADDRESS_ALREADY_DEFINED
+struct next_address_t
+{
+    union { uint8_t ipv4[4]; uint16_t ipv6[8]; } data;
+    uint16_t port;
+    uint8_t type;
+};
+#define NEXT_ADDRESS_ALREADY_DEFINED
+#endif // #ifndef NEXT_ADDRESS_ALREADY_DEFINED
 
 class FNetworkNextSocketClient : public FNetworkNextSocket
 {
