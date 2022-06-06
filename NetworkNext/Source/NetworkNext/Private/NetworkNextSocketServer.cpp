@@ -1,5 +1,5 @@
 /*
-    Network Next SDK. Copyright © 2017 - 2021 Network Next, Inc.
+    Network Next SDK. Copyright © 2017 - 2022 Network Next, Inc.
 
 	Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following
 	conditions are met:
@@ -21,6 +21,7 @@
 */
 
 #include "NetworkNextSocketServer.h"
+#include "next.h"
 
 FNetworkNextSocketServer::FNetworkNextSocketServer(const FString& InSocketDescription, const FName& InSocketProtocol)
     : FNetworkNextSocket(ENetworkNextSocketType::TYPE_Server, InSocketDescription, InSocketProtocol)
